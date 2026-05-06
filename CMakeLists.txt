@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 3.10)
 
 if(DEFINED IDF_PATH)
     idf_component_register(SRCS "minmea.c" INCLUDE_DIRS ".")
-    # IMPORTANT: this maps UTC conversion to mktime(); system timezone must be configured as UTC.
-    target_compile_definitions(${COMPONENT_LIB} PRIVATE timegm=mktime)
     return()
 endif()
 
