@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 
+if(DEFINED IDF_PATH)
+    idf_component_register(SRCS "minmea.c" INCLUDE_DIRS ".")
+    return()
+endif()
+
 project(minmea)
 
 option(MINMEA_ENABLE_TESTING "Enable building and running unit tests" ON)
